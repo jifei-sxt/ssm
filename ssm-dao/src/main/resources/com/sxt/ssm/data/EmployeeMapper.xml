@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC 
+"-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxt.ssm.data.EmployeeMapper">
+	<resultMap type="EmployeeEntity" id="rm">
+		<id column="employee_id" property="employeeId" />
+		<result column="manager_id" property="managerId" />
+		<result column="first_name" property="firstName" />
+		<result column="last_name" property="lastName" />
+		<result column="title" property="title" />
+		<result column="salary" property="salary" />
+	</resultMap>
+	<select id="selectAllEmployees" resultMap="rm">
+		SELECT
+		e.`employee_id`,e.`manager_id`,e.`first_name`,e.`last_name`,e.`title`,e.`salary`
+		FROM employees e
+	</select>
+</mapper>
